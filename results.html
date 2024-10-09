@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #007bff;
+            margin-bottom: 20px;
+        }
+
+        .results-section {
+            margin-top: 20px;
+        }
+
+        .matches-found {
+            color: #28a745;
+            margin-bottom: 10px;
+        }
+
+        .matches-list {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .matches-list li {
+            background-color: #d4edda;
+            padding: 8px 15px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Results</h1>
+        <div class="results-section">
+            {% if matches %}
+                <h2 class="matches-found">Matches Found:</h2>
+                <ul>
+                    {% for match in matches %}
+                        <li>{{ match }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <h2>Email Validation Result:</h2>
+                {% if validation_result == 'Valid Email' %}
+                    <p class="email-valid">{{ validation_result }}</p>
+                {% elif validation_result == 'Invalid Email' %}
+                    <p class="email-invalid">{{ validation_result }}</p>
+                {% else %}
+                    <p>Unable to validate email.</p>
+                {% endif %}
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>

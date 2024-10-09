@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Web App</title>
+    <style>
+        /* Add CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            display: flex; /* Use flexbox for layout */
+            justify-content: space-between; /* Space items evenly */
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+        }
+
+        .form-group {
+            flex-basis: 45%; /* Set width of each form */
+            margin-bottom: 20px; /* Add spacing between forms */
+            background-color: #f9f9f9; /* Add background color */
+            padding: 20px; /* Add padding to the forms */
+            border-radius: 5px; /* Add border radius */
+        }
+
+        label {
+            display: block; /* Display labels as blocks */
+            margin-bottom: 5px; /* Add spacing below labels */
+        }
+
+        input[type="text"] {
+            width: 100%; /* Occupy full width of the form */
+            padding: 10px; /* Add padding to input fields */
+            font-size: 16px; /* Increase font size */
+            box-sizing: border-box; /* Include padding in width */
+            border: 1px solid #ccc; /* Add border */
+            border-radius: 5px; /* Add border radius */
+        }
+
+        input[type="submit"] {
+            width: 100%; /* Occupy full width of the form */
+            padding: 10px 20px; /* Add padding to submit buttons */
+            font-size: 16px; /* Increase font size */
+            background-color: #007bff; /* Add background color */
+            color: #fff; /* Set text color to white */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Add border radius */
+            cursor: pointer; /* Add cursor pointer */
+        }
+    </style>
+</head>
+<body>
+    <h1>Regex Web App</h1>
+    <div class="container">
+        <!-- Regex Validation Form -->
+        <div class="form-group">
+            <h2>Regex Validation</h2>
+            <form action="/results" method="POST">
+                <label for="test_string">Test String:</label>
+                <input type="text" id="test_string" name="test_string">
+                <label for="regex_pattern">Regex Pattern:</label>
+                <input type="text" id="regex_pattern" name="regex_pattern">
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        
+        <!-- Email Validation Form -->
+        <div class="form-group">
+            <h2>Email Validation</h2>
+            <form action="/validate_email" method="POST">
+                <label for="email">Email:</label>
+                <input type="text" id="email" name="email">
+                <input type="submit" value="Validate Email">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
